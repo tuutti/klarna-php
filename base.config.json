@@ -2,9 +2,9 @@
     "invokerPackage": "Klarna",
     "modelPackage" : "Model",
     "apiPackage" : "Api",
-    "packagePath": "php-klarna",
-    "packageName": "php-klarna",
+    "packagePath": "php-klarna-base",
+    "packageName": "php-klarna-base",
     "srcBasePath": "src",
-    "composerVendorName": "php-klarna",
+    "composerVendorName": "php-klarna-base",
     "composerProjectName": "client"
 }
