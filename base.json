@@ -1,0 +1,18 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Klarna API base spec",
+    "version": "1.0.0",
+    "title": "Klarna API"
+  },
+  "host": "api.klarna.com",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "externalDocs": {
+    "description": "Find out more about the Klarna REST APIs",
+    "url": "https://developers.klarna.com/api/"
+  },
+  "paths": {}
+}
