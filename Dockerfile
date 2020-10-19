@@ -1,5 +1,6 @@
-FROM openapitools/openapi-generator-cli:v4.3.1
+FROM node:current-alpine3.12
 
 RUN apk update --no-cache
-# Install jq
-RUN apk add jq curl git
+RUN apk add jq curl git openjdk8-jre make bash
+RUN npm install -g @openapitools/openapi-generator-cli
+RUN openapi-generator-cli || true
