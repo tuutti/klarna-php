@@ -3,4 +3,4 @@ FROM node:current-alpine3.12
 RUN apk update --no-cache
 RUN apk add jq curl git openjdk8-jre make bash sed
 RUN npm install -g @openapitools/openapi-generator-cli
-RUN openapi-generator-cli version-manager set 5.0.0-beta2
+RUN openapi-generator-cli version-manager set 5.1.1

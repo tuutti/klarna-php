@@ -33,6 +33,6 @@
         "psr-4": { "Klarna\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Klarna\\" : "test/" }
+        "psr-4": { "Klarna\\Test\\" : "test/" }
     }
 }
