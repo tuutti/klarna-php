@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PHONY :=
 COMMAND = openapi-generator-cli
-OPENAPI_VERSION ?= v5.2.0
+OPENAPI_VERSION ?= v6.0.1
 
 include .env
 export

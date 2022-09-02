@@ -1,4 +1,4 @@
-.php_cs
+.php-cs-fixer.dist.php
 .travis.yml
 composer.json
 git_push.sh
