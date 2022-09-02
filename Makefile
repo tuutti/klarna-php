@@ -1,18 +1,22 @@
-REPOSITORY = ghcr.io/tuutti/klarna-base-generator
+SHELL := /bin/bash
+PHONY :=
+COMMAND = openapi-generator-cli
+OPENAPI_VERSION ?= v5.2.0
 
-ifeq ($(TAG),)
-	TAG = 1.0
-endif
+include .env
+export
 
-.PHONY: build-image push-image release-image build-client
-
-build-image:
-	docker build -t $(REPOSITORY):$(TAG) ./
-
-push-image:
-	docker push $(REPOSITORY):$(TAG)
-
+PHONY += build-client
 build-client:
-	openapi-generator-cli generate -c base.config.json -i base.json -g php -o . --skip-validate-spec --git-host=github.com --git-repo-id=php-klarna-base --git-user-id=tuutti --global-property modelTests=false --global-property apiTests=false
+	docker container run --rm -v ${PWD}:/app openapitools/openapi-generator-cli:$(OPENAPI_VERSION) \
+		generate \
+		$(OPENAPI_GENERATE_ARGS) \
+		--config /app/$(NAME).config.json \
+		--input-spec /app/$(NAME).json \
+		--generator-name php \
+		--output /app \
+		--git-host="$(GIT_HOST)" \
+		--git-repo-id="$(GIT_REPO_ID)" \
+		--git-user-id="$(GIT_USER_ID)"
 
-release-image: build-image push-image
+.PHONY: $(PHONY)
